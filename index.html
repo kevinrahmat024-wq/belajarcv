@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>AR Alternatif Tanpa ARCore</title>
+    <title>AR Alternatif Tanpa ARCore - Mobil Ferrari</title>
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
     <script src="https://raw.githack.com/AR-js-org/AR.js/3.3.2/aframe/build/aframe-ar.js"></script>
 </head>
@@ -9,12 +9,17 @@
 
     <a-scene embedded arjs="sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;">
         
+        <a-assets>
+            <a-asset-item id="model-ferrari" src="ferrari.glb"></a-asset-item>
+        </a-assets>
+
         <a-marker preset="hiro">
             
-            <a-box position="0 0.5 0" 
-                   material="color: #ff0000; opacity: 0.8;" 
-                   animation="property: rotation; to: 0 360 0; loop: true; dur: 5000">
-            </a-box>
+            <a-entity gltf-model="#model-ferrari" 
+                      position="0 0 0" 
+                      scale="0.5 0.5 0.5" 
+                      animation="property: rotation; to: 0 360 0; loop: true; dur: 5000">
+            </a-entity>
             
         </a-marker>
 
