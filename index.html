@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>AR Alternatif - Mobil Ferrari</title>
+    <title>AR Mobil Tanpa File 3D Eksternal</title>
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
     <script src="https://raw.githack.com/AR-js-org/AR.js/3.3.2/aframe/build/aframe-ar.js"></script>
 </head>
@@ -9,17 +9,26 @@
 
     <a-scene embedded arjs="sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;">
         
-        <a-assets>
-            <a-asset-item id="model-ferrari" src="ferrari.glb"></a-asset-item>
-        </a-assets>
-
         <a-marker preset="hiro">
             
-            <a-entity gltf-model="#model-ferrari"
-                      scale="0.05 0.05 0.05"
-                      position="0 0 0"
-                      rotation="0 0 0"
-                      animation="property: position; from: 0 0 1; to: 0 0 -1; dir: alternate; dur: 2000; loop: true; easing: linear">
+            <a-entity animation="property: position; from: 0 0.5 -1.5; to: 0 0.5 1.5; dir: alternate; loop: true; dur: 2000; easing: linear">
+                
+                <a-box position="0 0.2 0" width="1.2" height="0.3" depth="2.5" material="color: #ff2800;"></a-box>
+                
+                <a-box position="0 0.5 -0.2" width="0.9" height="0.35" depth="1.2" material="color: #111111; opacity: 0.9;"></a-box>
+                
+                <a-box position="0 0.45 1.1" width="1.1" height="0.05" depth="0.3" material="color: #ff2800;"></a-box>
+                <a-box position="-0.4 0.35 1.1" width="0.05" height="0.2" depth="0.2" material="color: #ff2800;"></a-box>
+                <a-box position="0.4 0.35 1.1" width="0.05" height="0.2" depth="0.2" material="color: #ff2800;"></a-box>
+
+                <a-cylinder position="-0.65 0.1 -0.8" radius="0.25" height="0.15" rotation="0 0 90" material="color: #222222;"></a-cylinder>
+                
+                <a-cylinder position="0.65 0.1 -0.8" radius="0.25" height="0.15" rotation="0 0 90" material="color: #222222;"></a-cylinder>
+                
+                <a-cylinder position="-0.65 0.1 0.8" radius="0.25" height="0.15" rotation="0 0 90" material="color: #222222;"></a-cylinder>
+                
+                <a-cylinder position="0.65 0.1 0.8" radius="0.25" height="0.15" rotation="0 0 90" material="color: #222222;"></a-cylinder>
+
             </a-entity>
             
         </a-marker>
